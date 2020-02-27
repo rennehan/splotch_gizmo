@@ -1,0 +1,150 @@
+############################
+# Input Options
+############################
+
+# This file can be downloaded from
+# http://www.mpa-garching.mpg.de/~kdolag/Splotch/Source/snap_092.gz
+# You'll have to unzip it afterwards
+#infile=/home/rennehan/rrg/bak/cosmo/256/25Mpc/Mixing/MFM_Mixing_None_N256L25/data/snapshot_
+#infile=/home/rennehan/scratch/cosmo/512/25Mpc/NoirTest/MFM_NoirTest_N512L25/snapshot_
+infile=/home/b/babul/rennehan/project/highres_protocluster_project_2020/1.87e9/075/snapshot_
+#infile=/scratch/b/babul/rennehan/cosmo/256/15Mpc/NoirTest/MFM_NoirTest_TremmelTest_S6_N256L15/snapshot_
+#fidx=296
+fidx=80
+#infile=/home/rennehan/scratch/EddyDiffusion/MFM/TurbOff/TurbOff_Protocluster_HighRes/data/snapshot_
+#fidx=100
+
+# 0,1: plain binary file, 2: Gadget2, 3: Enzo, 4: millenium, 5: mpiio,
+# 6: mesh reader, 7: hdf5
+simtype=8
+snapshot_spacing=1
+#snapdir=FALSE
+periodic=TRUE
+#scene_file=spline.txt
+#scene_start=1
+#scene_incr=1
+#interpolation_mode=1
+
+# Additional flags for Gadget
+numfiles=1
+#swap_endian=TRUE
+ptypes=2
+ptype0=0
+ptype1=4
+
+# labels to visualize('XXXX','TEMP','U','RHO','MACH','DTEG','DISS')
+size_fix0=0
+size_label0=SmoothingLength
+size_present0=1
+size_fac0=0.5
+intensity_label0=Density
+intensity_present0=1
+intensity_min0=-11.8784
+intensity_max0=-1.44456
+#intensity_max0=-5
+#intensity_min0=-11
+#intensity_max0=2
+color_label0=InternalEnergy
+color_present0=1
+color_is_vector0=FALSE
+color_log0=TRUE
+color_min0=0.152815
+color_max0=5
+#color_max0=6.29244
+#color_max0=5
+
+size_fix1=1
+size_label1=HSMS
+size_present1=0
+size_fac1=0.5
+intensity_label1=XXXX
+intensity_present1=0
+color_label1=StellarFormationTime
+color_present1=1
+color_is_vector1=FALSE
+color_log1=TRUE
+#color_min1=-1.34248
+color_min1=-1.5
+color_max1=-1
+
+############################
+# Output Options
+############################
+
+# 0: TGA uncompressed, 1: PPM ASCII, 2: PPM binary, 3: TGA runlength-compressed
+pictype=0
+outfile=protocluster_highres_SNAPNUM
+#xres=800
+yres=1080
+xres=1920
+
+#gray_absorption=0.0001
+gray_absorption=0.01
+colorbar=FALSE
+
+############################
+# Visualization properties
+############################
+a_eq_e=t
+
+# 0: nosort, 1: by z, 2: by value, 3: by reversed value, 4: by size
+sort_type=1
+
+minrad_pix = 1
+
+#palette0=palettes/OldSplotch.pal
+palette0=palettes/NewSplotch.pal
+brightness0=1.0
+
+palette1=palettes/Stars.pal
+brightness1=2.0
+
+############################
+# Geometrical setup
+############################
+#camera_x=      3244.4
+#camera_y=      10500.3
+#camera_z=      4764.7
+#lookat_x=      -2000
+#lookat_y=      5289.3
+#lookat_z=      4764.7
+# 499181.7678724 498109.13886343 497469.59252017
+camera_x=499181
+camera_y=498109
+camera_z=498431.
+lookat_x=499181
+lookat_y=498109
+lookat_z=497469
+sky_x=1
+sky_y=0
+sky_z=0
+
+fov=45
+#camera_x=499181
+#camera_y=497109
+#camera_z=498469.
+#lookat_x=499181
+#lookat_y=498109
+#lookat_z=497469
+#sky_x=1
+#sky_y=0
+#sky_z=0
+
+#fov=90
+
+#EyeSeparation = 0.8
+
+############################
+# CUDA SETUP
+############################
+#number of GPUs to use
+#gpu_number =1
+#number of cores per node (it is required if gpu_number > 1)
+cores_number = 1
+
+# ALGORITHM PARAMETERS
+#width of the boundary around the image tile (default=8)
+tile_boundary_width = 8
+# x and y side dimension of the image tile, in terms of pixels (default=12)
+tile_x-side=12 
+tile_y-side=12
