@@ -3,12 +3,19 @@
 My modification of the SPLOTCH visualization program for GIZMO simulations. For 
 an example look in parameterfiles/demo_cosmo_bak.par.  There you will need to edit:
 
+---
 infile=/full/path/to/snapshot_
+
 fidx=80
+
 simtype=8
 
+---
+
 *infile* only requires the full path and snapshot format, not the number or extension.
+
 *fidx* is the snapshot number, assumed to be in padded (e.g. "000") format.
+
 *simtype=8* is GIZMO HDF5.
 
 Copied below is the README downloaded with the package.
